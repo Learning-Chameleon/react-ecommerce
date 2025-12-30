@@ -1,0 +1,15 @@
+nav {
+  display: flex !important;
+  gap: 20px;
+}
+nav > a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 10px;
+  background-color: white;
+}
+nav > a:hover {
+  color: white;
+  background-color: cyan;
+}
