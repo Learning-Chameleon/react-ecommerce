@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import api from "../../api/axiosInstance";
+import LeafletMap from "./Map";
 
 const userObjectTemplate = {
   id: null,
@@ -173,6 +174,12 @@ function UserForm() {
           </tr>
         </tbody>
       </table>
+      {formData.address.city && (
+        <LeafletMap
+          lat={formData.address.geolocation.lat}
+          lng={formData.address.geolocation.long}
+        />
+      )}
     </form>
   );
 }
