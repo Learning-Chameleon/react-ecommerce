@@ -24,7 +24,16 @@ function UserList() {
   };
 
   const onDelete = (userId) => {
-    // Delete user logic here
+    if (window.confirm("Are you sure you want to delete this user?")) {
+      userService
+        .deleteUser(userId)
+        .then(() => {
+          setUserList(userList.filter((user) => user.id !== userId));
+        })
+        .catch((error) => {
+          console.error("Error deleting user:", error);
+        });
+    }
   };
 
   return (
